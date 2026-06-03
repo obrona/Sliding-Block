@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="500" viewBox="0 0 520 500" role="img" aria-labelledby="title desc">
+  <title id="title">Medium sliding block puzzle initial state</title>
+  <desc id="desc">A six by six sliding block board with the main horizontal block on row three, columns two and three.</desc>
+  <rect width="520" height="500" fill="#f8fafc"/>
+  <g transform="translate(20 20)">
+    <rect x="0" y="0" width="480" height="480" fill="#ffffff" stroke="#6b7280" stroke-width="4"/>
+    <path d="M480 160h16v80h-16z" fill="#ffffff"/>
+    <g stroke="#d1d5db" stroke-width="1">
+      <path d="M80 0v480"/>
+      <path d="M160 0v480"/>
+      <path d="M240 0v480"/>
+      <path d="M320 0v480"/>
+      <path d="M400 0v480"/>
+      <path d="M0 80h480"/>
+      <path d="M0 160h480"/>
+      <path d="M0 240h480"/>
+      <path d="M0 320h480"/>
+      <path d="M0 400h480"/>
+    </g>
+    <g stroke="#5c3317" stroke-width="3">
+      <rect x="80" y="160" width="160" height="80" rx="12" fill="#86efac" stroke="#166534"/>
+      <rect x="160" y="0" width="160" height="80" rx="12" fill="#c15454"/>
+      <rect x="400" y="0" width="80" height="160" rx="12" fill="#c15454"/>
+      <rect x="160" y="400" width="160" height="80" rx="12" fill="#c15454"/>
+      <rect x="240" y="240" width="80" height="160" rx="12" fill="#c15454"/>
+      <rect x="240" y="80" width="80" height="160" rx="12" fill="#c15454"/>
+      <rect x="400" y="160" width="80" height="160" rx="12" fill="#c15454"/>
+      <rect x="0" y="80" width="80" height="240" rx="12" fill="#c15454"/>
+      <rect x="80" y="0" width="80" height="160" rx="12" fill="#c15454"/>
+    </g>
+  </g>
+</svg>
