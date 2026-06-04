@@ -8,26 +8,18 @@ export const diffs = [
 ]
 
 export function getBoard(diff: string) {
-    let board: Block[];
-
     switch (diff) {
         case 'very-easy':
-            board = veryEasyBoard;
-            break;
+            return veryEasyBoard;
         case 'easy':
-            board = easyBoard;
-            break;
+            return easyBoard;
         case 'medium':
-            board = mediumBoard;
-            break;
+            return mediumBoard;
         case 'hard':
-            board = hardBoard;
-            break;
+            return hardBoard;
         default:
-            board = hardBoard;
+            return hardBoard;
     }
-
-    return structuredClone(board);
 }
 
 export const veryEasyBoard: Block[] = [

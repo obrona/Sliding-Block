@@ -27,10 +27,11 @@ export class SlidingBlock {
     C: number = 6;
     blocks: Block[];
     outRow: number = 2; // the out slot is always at the right i.e at (outRow, C - 1)
+    history: Block[] = [];
     updateFn: () => void;
 
     constructor(blocks: Block[], updateFn: () => void = () => {}) {
-        this.blocks = blocks;
+        this.blocks = structuredClone(blocks); // take a deep copy !
         this.updateFn = updateFn;
     }
 
@@ -79,6 +80,7 @@ export class SlidingBlock {
 
         let can = true;
         const orient = getBlockOrientation(b);
+        // adjust nr, nc depending on whether the orientation is vertical or horizontal.
         if (orient === 'horizontal') nr = b.r;
         if (orient === 'vertical') nc = b.c;
         
@@ -101,8 +103,20 @@ export class SlidingBlock {
         }
 
         if (!can) return false;
+        this.history.push(structuredClone(b));
         b.r = nr;
         b.c = nc;
         this.updateFn();
+    }
+
+    undo() {
+        if (this.history.length === 0) return false;
+
+        const b = this.history.pop()!;
+        const nowB = this.blocks.find(bl => bl.id === b.id)!;
+        nowB.r = b.r;
+        nowB.c = b.c;
+        this.updateFn();
+        return true;
     }
 }

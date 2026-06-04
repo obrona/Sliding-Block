@@ -51,12 +51,11 @@ export function GameGrid({ game }: GameGridProps) {
     const dr = Math.round(dy / CELL_SIZE);
     const dc = Math.round(dx / CELL_SIZE);
     const { startR, startC, targetBlock } = dragStateRef.current;
-    const isVertical = targetBlock.h > targetBlock.w;
 
     game.moveBlock(
       targetBlock,
-      isVertical ? startR + dr : startR,
-      isVertical ? startC : startC + dc
+      startR + dr,
+      startC + dc,
     );
   }
 

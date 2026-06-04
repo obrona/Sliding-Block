@@ -6,10 +6,12 @@ import { useSlidingBlock } from './hooks/useSlidingBlock'
 function App() {
   const {
     difficulty,
-    game,
+    gameRef,
     reset,
     changeDifficulty,
   } = useSlidingBlock();
+
+  const game = gameRef.current;
 
   const banner = (game.isWin()) ? 'You Win!' : '';
 
@@ -39,6 +41,7 @@ function App() {
         <div className='space-x-2'>
           <button 
             className='bg-white px-2 py-1 text-lg rounded-sm hover:scale-110 cursor-pointer'
+            onClick={game.undo.bind(game)}
           >
             ↶
           </button>
